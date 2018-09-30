@@ -6,7 +6,7 @@ import java.security.NoSuchAlgorithmException;
 public class PDDXValidator {
 
     public final static boolean validate(String hash, String userId, String password) throws NoSuchAlgorithmException {
-        return hash.substring(64).equals(encryptSHA512(userId + password));
+        return hash.equals(encryptSHA512(userId + password));
     }
 
     private static String encryptSHA512(String str) throws NoSuchAlgorithmException {
